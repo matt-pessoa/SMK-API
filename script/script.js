@@ -10,7 +10,10 @@ function createElement({
   production_date, // array | production_date[0].period --> date of production
   techniques, // array
 }) {
-  console.log(techniques);
+  const artworkSearch = document.querySelector('#artwork-search');
+  const newP = document.createElement('p');
+  artworkSearch.appendChild(newP);
+  newP.innerText = artist;
 }
 
 async function searchArt(key) {
@@ -20,8 +23,9 @@ async function searchArt(key) {
   const { items } = await response.json();
   const imagesOnly = items.filter((obj) => obj.has_image === true);
 
-  return createElement(imagesOnly[1]);
-  // return console.log(imagesOnly);
+  imagesOnly.forEach((obj) => createElement(obj));
+
+  // return imagesOnly;
 }
 
 function handleSearch() {
