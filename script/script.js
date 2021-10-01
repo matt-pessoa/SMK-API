@@ -11,9 +11,14 @@ function createElement({
   techniques, // array
 }) {
   const artworkSearch = document.querySelector('#artwork-search');
-  const newP = document.createElement('p');
-  artworkSearch.appendChild(newP);
-  newP.innerText = artist;
+  const artworkSection = document.createElement('section');
+  artworkSearch.appendChild(artworkSection);
+  artworkSection.classList.add('artwork-section');
+
+  const thumbnail = document.createElement('img');
+  thumbnail.classList.add('art-thumb');
+  thumbnail.src = `${image_thumbnail}`;
+  artworkSection.appendChild(thumbnail);
 }
 
 async function searchArt(key) {
@@ -30,7 +35,9 @@ async function searchArt(key) {
 
 function handleSearch() {
   const searchBtn = document.querySelector('#search-btn');
+  const artworkSearch = document.querySelector('#artwork-search');
   searchBtn.addEventListener('click', () => {
+    artworkSearch.innerHTML = '';
     const val = document.querySelector('#art-search').value;
     searchArt(val);
   });

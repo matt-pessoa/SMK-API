@@ -16,3 +16,13 @@ body {
   height: 100vh;
   border: 2px solid red;
 }
+
+#artwork-search {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.art-thumb {
+  width: 30vh;
+}
