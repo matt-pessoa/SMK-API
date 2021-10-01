@@ -3,7 +3,7 @@ body {
   padding: 0;
   background-color: #111111;
   color: #f4f4f4;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .container {
@@ -13,10 +13,9 @@ body {
 }
 
 #artwork-field {
-  display: flex;
+  /* display: flex; */
   width: 50%;
-  height: 100%;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   overflow: scroll;
   margin-right: 10px;
 }
@@ -24,6 +23,13 @@ body {
 #search-field {
   display: flex;
   justify-content: flex-end;
+}
+
+#artwork-section {
+  display: flex;
+  max-height: 20px;
+  width: 20%;
+  flex-wrap: wrap;
 }
 
 /* #artwork-search {
@@ -41,8 +47,9 @@ body {
   margin: 0;
 }
 
-#art-focus img {
+.art-focus img {
   width: 100%;
+  height: 80%;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
@@ -96,4 +103,17 @@ body {
 
 #artwork-field::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.art-thumb {
+  animation: fadeIn 1s forwards;
 }
