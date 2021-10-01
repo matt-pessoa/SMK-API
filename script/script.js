@@ -1,6 +1,19 @@
 const API_ROOT = 'https://api.smk.dk/api/v1';
 const ENDPOINT_ART_SEARCH = '/art/search/';
 
+function removeSelected() {
+  const artworkArray = Array.from(
+    document.querySelector('#artwork-search').children
+  );
+  artworkArray.forEach((item) => item.classList.remove('selected'));
+}
+
+function handleArtClick(event) {
+  removeSelected();
+  const selected = event.target;
+  selected.closest('.artwork-section').classList.add('selected');
+}
+
 function createElement({
   artist, // array | artist[0]
   colors, // array
@@ -13,7 +26,9 @@ function createElement({
   const artworkSearch = document.querySelector('#artwork-search');
   const artworkSection = document.createElement('section');
   artworkSearch.appendChild(artworkSection);
+  artworkSearch.firstElementChild.classList.add('selected');
   artworkSection.classList.add('artwork-section');
+  artworkSection.addEventListener('click', handleArtClick);
 
   const thumbnail = document.createElement('img');
   thumbnail.classList.add('art-thumb');
@@ -36,6 +51,7 @@ async function searchArt(key) {
 function handleSearch() {
   const searchBtn = document.querySelector('#search-btn');
   const artworkSearch = document.querySelector('#artwork-search');
+
   searchBtn.addEventListener('click', () => {
     artworkSearch.innerHTML = '';
     const val = document.querySelector('#art-search').value;
