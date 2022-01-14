@@ -1,6 +1,8 @@
 import React from "react";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import "./css/Header.css";
 
 function Header() {
 	const { t } = useTranslation();
@@ -8,23 +10,27 @@ function Header() {
 	const languages = [
 		{
 			code: "en",
-			name: "English",
+			name: "EN",
 		},
 		{
 			code: "fr",
-			name: "Français",
+			name: "FR",
 		},
 		{
 			code: "pt",
-			name: "Português",
+			name: "PT",
 		},
 	];
 
 	return (
 		<header>
 			<nav>
-				<li>{t("search_header")}</li>
-				<li>{t("themes_header")}</li>
+				<Link to="/">
+					<li>{t("search_header")}</li>
+				</Link>
+				<Link to="/themes">
+					<li>{t("themes_header")}</li>
+				</Link>
 				<li>{t("my_list_header")}</li>
 				<li>{t("about_project_header")}</li>
 				<select>
