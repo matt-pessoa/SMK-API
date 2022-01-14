@@ -1,5 +1,8 @@
 {
   "translation": {
-    "search_header": "Rechercher"
+    "search_header": "Rechercher",
+    "themes_header": "Thèmes",
+    "my_list_header": "Ma liste",
+    "about_project_header": "À propos"
   }
 }
