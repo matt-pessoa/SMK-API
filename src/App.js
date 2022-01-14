@@ -1,12 +1,10 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import Header from "./components/Header";
 
 function App() {
-	const { t } = useTranslation();
-
 	return (
-		<div className="App">
-			<h1>{t("hello_world")}</h1>
+		<div className="container">
+			<Header />
 		</div>
 	);
 }
