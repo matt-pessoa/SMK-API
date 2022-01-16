@@ -15,9 +15,10 @@ function Slides() {
 			setCurrentImage(sliderImages[imageIndex]);
 		}
 	}, 8000);
+
 	return (
 		<section className="slides">
-			<img className="fade-out" src={currentImage} />
+			<img className="currentArt" src={currentImage} />
 		</section>
 	);
 }
