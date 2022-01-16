@@ -31,8 +31,12 @@ function Header() {
 				<Link to="/themes">
 					<li>{t("themes_header")}</li>
 				</Link>
-				<li>{t("my_list_header")}</li>
-				<li>{t("about_project_header")}</li>
+				<Link to="/favorites">
+					<li>{t("my_list_header")}</li>
+				</Link>
+				<Link to="about">
+					<li>{t("about_project_header")}</li>
+				</Link>
 				<select>
 					{languages.map(({ code, name }) => (
 						<option onClick={() => i18next.changeLanguage(code)}>{name}</option>

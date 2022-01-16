@@ -1,5 +1,11 @@
 nav {
+	color: #bcbcbc;
 	display: flex;
 	justify-content: flex-end;
 	list-style-type: none;
+}
+
+a {
+	color: #bcbcbc;
+	text-decoration: none;
 }
