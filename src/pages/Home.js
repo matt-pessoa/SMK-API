@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 // import Slides from "../components/Slides";
-import Search from "../pages/Search";
+import Search from "./Search";
 import "./css/Home.css";
 
 function App() {

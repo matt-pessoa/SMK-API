@@ -1,0 +1,16 @@
+/* Use CSS Grid to create layout */
+
+.search-response {
+	display: flex;
+	flex-wrap: wrap;
+	width: 95%;
+}
+
+.search-card {
+	width: 253px;
+	margin: 5px;
+}
+
+.search-card > img {
+	max-width: 253px;
+}
