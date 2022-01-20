@@ -39,7 +39,9 @@ function Header() {
 				</Link>
 				<select>
 					{languages.map(({ code, name }) => (
-						<option onClick={() => i18next.changeLanguage(code)}>{name}</option>
+						<option key={code} onClick={() => i18next.changeLanguage(code)}>
+							{name}
+						</option>
 					))}
 				</select>
 			</nav>
