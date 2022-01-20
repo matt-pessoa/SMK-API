@@ -20,9 +20,11 @@ function Search() {
 	async function handleChange(event) {
 		const { value } = event.target;
 		setSearchbar(value);
-		const keySearch = searchbar.split(" ").join("%20");
-		const data = await fetchArtwork(`${inputSearch}${keySearch}&lang=en`);
-		console.log(data);
+		const data =
+			value === ""
+				? await fetchArtwork(showcaseImages)
+				: await fetchArtwork(inputSearch(value));
+		setArtworks(data);
 	}
 
 	return (
