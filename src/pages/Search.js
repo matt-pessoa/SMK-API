@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SearchCard from "../components/SearchCard";
 import fetchArtwork from "../services/endpoints";
-import { showcaseImages } from "../services/endpoints";
+import { showcaseImages, inputSearch } from "../services/endpoints";
 import "./css/Search.css";
 
 function Search() {
 	const [artworks, setArtworks] = useState([]);
 	const [searchbar, setSearchbar] = useState("");
+	// const [keySearch, setKeySearch] = useState(searchbar);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -16,9 +17,12 @@ function Search() {
 		fetchData();
 	}, []);
 
-	function handleChange(event) {
+	async function handleChange(event) {
 		const { value } = event.target;
 		setSearchbar(value);
+		const keySearch = searchbar.split(" ").join("%20");
+		const data = await fetchArtwork(`${inputSearch}${keySearch}&lang=en`);
+		console.log(data);
 	}
 
 	return (
